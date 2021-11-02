@@ -1,10 +1,10 @@
-# Clean Architecture Todo Example
+# Clean Architecture Todo-Backend Example
 
 ## Description
 
-This is a clean architecture implementation of the todo backend. The project uses
-[Project Jigsaw](https://openjdk.java.net/projects/jigsaw/) to achieve modularity
-between components in the project.
+This is a [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+implementation of the todo backend. The project uses [Project Jigsaw](https://openjdk.java.net/projects/jigsaw/)
+to achieve modularity between components in the project.
 
 Currently, this project uses spring boot in order to implement the  backend. It
 would have been interesting to do another backend implementation in parallel,
@@ -16,7 +16,7 @@ for someone that has time for that.
 
 ## Module dependencies
 
-The diagram below shows the modules used in this project and how they depend
+Below is a mermaid diagram that shows the modules used in this project and how they depend
 on each other.
 
 ```mermaid
@@ -41,40 +41,29 @@ stateDiagram
     Controller --> Domain
 ```
 
-
-
 ## Pre-requisite
 
-Java 11
+Ensure Java 11 or higher is installed, the following version was
+used when developing this project:
 
-```
+```shell
 > java -version
-openjdk version "11" 2018-09-25
-OpenJDK Runtime Environment 18.9 (build 11+28)
-OpenJDK 64-Bit Server VM 18.9 (build 11+28, mixed mode)
+openjdk version "12" 2019-03-19
+OpenJDK Runtime Environment (build 12+33)
+OpenJDK 64-Bit Server VM (build 12+33, mixed mode, sharing)
 ```
 
-### Compile
+## Build, run and test
 
-`./gradlew clean build`
+```shell
+> ./gradlew clean build
+> java -jar application/spring-app/build/libs/spring-app-1.0.0.jar
+> ./gradlew test
+```
 
-### Run Spring example
-
-`java -jar application/spring-app/build/libs/spring-app-1.0.0.jar`
-
-
-## links
-
-http://localhost:8080/todos
-https://todobackend.com/client/index.html
-https://todobackend.com/specs/index.html
-
-Running client
-https://todobackend.com/client/index.html?http://localhost:8080/todos
-
-Running tests
-https://todobackend.com/specs/index.html?http://localhost:8080/todos
-
+After the spring application is started:
+* Run the todobackend.com tests, [by following this link](https://todobackend.com/specs/index.html?http://localhost:8080/todos)
+* Run the todobackend.com client, [by following this link](https://todobackend.com/client/index.html?http://localhost:8080/todos)
 
 ## Credits
 
