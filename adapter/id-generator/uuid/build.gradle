@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'robe.todo.uuid'
+
+dependencies {
+	implementation(
+		project(':usecase')
+	)
+    implementation 'org.springframework:spring-web:5.3.11'
+}
+
+repositories {
+    mavenCentral()
+}

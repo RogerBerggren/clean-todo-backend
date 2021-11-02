@@ -1,0 +1,33 @@
+subprojects {
+	apply plugin: 'java'
+
+	group = 'com.robe.todo'
+	version = '1.0.0'
+
+	sourceCompatibility = 1.11
+	targetCompatibility = 1.11
+
+	repositories {
+		jcenter()
+		mavenCentral()
+	}
+	afterEvaluate {
+		repositories {
+			jcenter()
+		}
+
+		compileJava {
+			inputs.property("moduleName", moduleName)
+			doFirst {
+				options.compilerArgs = [
+					'--module-path', classpath.asPath,
+				]
+				classpath = files()
+			}
+		}
+	}
+}
+
+repositories {
+	mavenCentral()
+}

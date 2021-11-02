@@ -1,0 +1,28 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE"
+	}
+}
+
+apply plugin: 'java-library'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+ext.moduleName = 'robe.todo.spring'
+
+dependencies {
+	implementation(
+		project(':config'),
+		project(':usecase'),
+		project(':controller'),
+		'org.springframework.boot:spring-boot-starter-web:2.5.5',
+		'org.springframework.boot:spring-boot-starter-hateoas:2.5.5'
+	)
+}
+
+repositories {
+    mavenCentral()
+}

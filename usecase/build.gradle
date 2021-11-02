@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'robe.todo.usecase'
+
+dependencies {
+	implementation(
+		project(':domain'),
+		'org.apache.commons:commons-lang3:3.12.0'
+	)
+    implementation 'org.testng:testng:7.4.0'
+}
+
+test {
+	useTestNG {
+		preserveOrder true
+	}
+}

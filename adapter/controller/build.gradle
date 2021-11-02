@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'robe.todo.controller'
+
+dependencies {
+	implementation(
+		project(':usecase'),
+		project(':domain'),
+	)
+}
+
+repositories {
+    mavenCentral()
+}

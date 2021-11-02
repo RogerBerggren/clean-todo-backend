@@ -1,0 +1,15 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'robe.todo.db.simple'
+
+dependencies {
+	implementation(
+		project(':domain'),
+		project(':usecase')
+	)
+    implementation 'org.springframework:spring-web:5.3.11'
+}
+
+repositories {
+    mavenCentral()
+}

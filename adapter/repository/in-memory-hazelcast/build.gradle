@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'robe.todo.db.hazelcast'
+
+dependencies {
+	implementation(
+		project(':domain'),
+		project(':usecase'),
+	)
+
+	implementation 'org.springframework:spring-web:5.3.11'
+	implementation 'com.hazelcast:hazelcast-all:4.2.2'
+}
+
+repositories {
+    mavenCentral()
+}
